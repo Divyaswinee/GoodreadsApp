@@ -3,10 +3,8 @@ import axios from 'axios';
 import proxify from 'proxify-url';
 import StarRatingComponent from 'react-star-rating-component';
 import ReactHtmlParser from 'react-html-parser';
+import { APIKEY, showAPIURL } from '../config/config';
 import './BookDetail.css';
-
-const APIKEY = process.env.APIKEY;
-const showAPIURL = process.env.showAPIURL;
 
 class BookDetail extends Component {
 	state = {
