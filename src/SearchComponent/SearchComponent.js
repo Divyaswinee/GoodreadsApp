@@ -3,10 +3,8 @@ import AsyncSelect from 'react-select/lib/Async';
 import axios from 'axios';
 import proxify from 'proxify-url';
 import PropTypes from 'prop-types';
+import { APIKEY, searchAPIURL } from '../config/config';
 import './SearchComponent.css';
-
-const API_URL = 'https://www.goodreads.com/search/index.xml';
-const API_KEY = 'vZt6PSQ52iaN3bFKvEwOlQ';
 
 class SearchComponent extends Component {
 	state = {
@@ -18,7 +16,7 @@ class SearchComponent extends Component {
   }
 
   getSearchResult = (searchTerm) => {
-    const url = `${API_URL}?key=${API_KEY}&q=${searchTerm}&search=title`;
+    const url = `${searchAPIURL}?key=${APIKEY}&q=${encodeURI(searchTerm)}&search=title`;
     const proxyUrl = proxify(url, { inputFormat: 'xml' });
     return new Promise(resolve => {
       axios.get(proxyUrl)
@@ -26,7 +24,6 @@ class SearchComponent extends Component {
           return data;
         })
         .then(datatwo => {
-          console.log('datatwo ', datatwo);
           const searchResult = datatwo.query.results.GoodreadsResponse.search;
           const allResult = searchResult.results;
           const workResult = allResult && allResult.work && allResult.work.length > 0 && allResult.work.map((current) => {
@@ -65,7 +62,7 @@ class SearchComponent extends Component {
           value={this.state.searchText}
           onChange={this.searchHandleChange}
           placeholder="Search Book"
-          loadOptions={this.getSearchResult.bind(this)}
+          loadOptions={this.getSearchResult}
           defaultOptions
           backspaceRemoves={true}
           cache={false}

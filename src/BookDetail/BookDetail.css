@@ -42,8 +42,7 @@
 }
 
 .descriptionDiv {
-	flex: 0.6;
-	display: flex;
+	display: block;
 	margin-top: 3em;
 }
 

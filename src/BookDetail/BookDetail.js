@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import axios from 'axios';
 import proxify from 'proxify-url';
 import StarRatingComponent from 'react-star-rating-component';
+import ReactHtmlParser from 'react-html-parser';
+import { APIKEY, showAPIURL } from '../config/config';
 import './BookDetail.css';
-
-const API_URL = 'https://www.goodreads.com/book/show/';
-const API_KEY = 'vZt6PSQ52iaN3bFKvEwOlQ';
 
 class BookDetail extends Component {
 	state = {
@@ -25,7 +24,7 @@ class BookDetail extends Component {
 
   getBookDescription = (book) => {
   	const bookID = book.id;
-  	const url = `${API_URL}${bookID}?key=${API_KEY}`;
+  	const url = `${showAPIURL}${bookID}?key=${APIKEY}`;
     const proxyUrl = proxify(url, { inputFormat: 'xml' });
     axios.get(proxyUrl)
     	.then(({ data }) => {
@@ -68,7 +67,7 @@ class BookDetail extends Component {
   					<span>{bookInfo.averageRating}</span>
   				</div>
   				{this.state.bookDescription !== 'Undefined' && <div className='descriptionDiv'>
-  					{this.state.bookDescription}
+  					{ReactHtmlParser(this.state.bookDescription)}
   				</div>}
   			</div>
   		</div>
