@@ -1,0 +1,53 @@
+.containerBody {
+	display: flex;
+	flex: 1;
+	flex-direction: row;
+}
+
+.containerLeft {
+	display: flex;
+	flex: 0.4;
+}
+
+.containerRight {
+	display: flex;
+	flex: 0.6;
+	flex-direction: column;
+	font-family: "Times New Roman", Times, serif;
+	color: #8b4513;
+	padding: 2em;
+}
+
+.imgStyle {
+	flex: 1;
+	margin: 2em;
+	border-color: transparent;
+}
+
+.titleDiv {
+	flex: 0.2;
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+.authorDiv {
+	flex: 0.1;
+	font-size: 2rem;
+}
+
+.ratingDiv {
+	flex: 0.05;
+	display: flex;
+	align-items: center;
+}
+
+.descriptionDiv {
+	flex: 0.6;
+	display: flex;
+	margin-top: 3em;
+}
+
+.starRatingStyles {
+	padding-right: 1em;
+}
+
