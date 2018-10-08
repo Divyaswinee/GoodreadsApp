@@ -3,8 +3,10 @@ import AsyncSelect from 'react-select/lib/Async';
 import axios from 'axios';
 import proxify from 'proxify-url';
 import PropTypes from 'prop-types';
-import { APIKEY, searchAPIURL } from '../config/config';
 import './SearchComponent.css';
+
+const APIKEY = process.env.APIKEY;
+const searchAPIURL = process.env.searchAPIURL;
 
 class SearchComponent extends Component {
 	state = {
