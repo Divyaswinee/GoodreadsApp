@@ -1,0 +1,52 @@
+.app {
+  background-color: #ffebcd;
+  min-height: 100vh;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.App-logo {
+  height: 20vmin;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.searchHeader {
+  display: flex;
+  background-color: #d2b48c;
+  flex: 0.1;
+  min-height: 5em;
+  max-height: 5em;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBody {
+  display: flex;
+  flex: 0.9;
+  height: 100%
+}
+
+.iconDiv {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.iconStyle {
+  width: 20em;
+  height: 20em;
+  border-radius: 50%;
+}
+
+.labelStyle {
+  margin-top: 0.5em;
+  font-size: 5rem;
+  color: #8b4513;
+  font-family: "Times New Roman", Times, serif;
+}

@@ -1,0 +1,11 @@
+.searchContainer {
+	display: flex;
+	flex: 1;
+	width: 100%;
+	justify-content: center;
+}
+
+.searchBoxCustomize {
+	width: 50em;
+	border-radius: 25px;
+}
