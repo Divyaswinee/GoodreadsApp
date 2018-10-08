@@ -87,3 +87,9 @@ Launches the test runner in the interactive watch mode.<br>
 4. react-select/lib/Async to display search box with possible dropdown options
 5. react-star-rating-component to display ratings in stars
 6. react-html-parser to convert html data into string
+
+## Future Enhancements
+
+1. Responsive support for mobile devices will be added.
+2. Error handling will be enhanced with more error catching and resolving.
+3. Voice recognition to search books will be added in future.
